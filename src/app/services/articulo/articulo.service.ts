@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Articulo } from '../../models/articulo/articulo.model';
@@ -9,12 +8,17 @@ const baseUrl = 'http://localhost:8004/api/articulos';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ArticuloService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Articulo[]> {
-    return this.http.get<Articulo[]>(baseUrl);
+  // getAll(): Observable<Articulo[]> {
+  //   return this.http.get<Articulo[]>(baseUrl);
+  // }
+
+  getAll(params: any): Observable<Articulo[]> {
+    return this.http.get<Articulo[]>(baseUrl, { params });
   }
 
   get(id: any): Observable<Articulo> {
@@ -27,6 +31,10 @@ export class ArticuloService {
 
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
+  }
+
+  updateEstatus(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/activo/${id}`, data);
   }
 
   delete(id: any): Observable<any> {

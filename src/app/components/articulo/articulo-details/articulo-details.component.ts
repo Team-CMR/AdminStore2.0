@@ -3,12 +3,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Articulo } from 'src/app/models/articulo/articulo.model';
 import { ArticuloService } from 'src/app/services/articulo/articulo.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-articulo-details',
   templateUrl: './articulo-details.component.html',
   styleUrls: ['./articulo-details.component.scss']
 })
+
 export class ArticuloDetailsComponent implements OnInit {
   @Input() viewMode = false;
 
@@ -43,11 +45,16 @@ export class ArticuloDetailsComponent implements OnInit {
   };
 
   message = '';
+  addStyle: string;
 
   constructor(
     private articuloService: ArticuloService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    public sanitizer: DomSanitizer) {
+      
+    this.addStyle = '/assets/addStyle.css';
+  }
 
   ngOnInit(): void {
     if (!this.viewMode) {
@@ -60,7 +67,9 @@ export class ArticuloDetailsComponent implements OnInit {
     this.articuloService.get(cod_barras)
       .subscribe({
         next: (data) => {
+          // this.viewMode = true;
           this.currentArticulo = data;
+          console.log("Articulo edit")
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -68,11 +77,11 @@ export class ArticuloDetailsComponent implements OnInit {
   }
 
   updateActived(status: boolean): void {
-    let newStatus = '';
-    if (this.currentArticulo.activo == '0') {
-      newStatus = '1';
+    let newStatus = 0;
+    if (this.currentArticulo.activo == 0) {
+      newStatus = 1;
     } else {
-      newStatus = '0';
+      newStatus = 0;
     }
 
     const data = {
@@ -145,7 +154,7 @@ export class ArticuloDetailsComponent implements OnInit {
       });
   }
 
-  updateTutorial(): void {
+  updateArticulo(): void {
     this.message = '';
 
     this.articuloService.update(this.currentArticulo.cod_Barras, this.currentArticulo)

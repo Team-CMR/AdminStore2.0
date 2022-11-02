@@ -1,1 +1,135 @@
-<p>Add articulo</p>
+<link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(addStyle)">
+
+<div>
+    <div class="content-grid form-content content-center">
+        <div class="content-titulo">
+            <h3>Add articulo</h3>
+        </div>
+    </div>
+    
+    <div class="content-grid form-content content-center">
+        <div class="content-titulo">
+            <p>{{ message }}</p>
+        </div>
+    </div>
+
+    <div class="content-grid form-content content-left">
+        <div class="col-grid-4">
+            <button (click)="saveArticulo()" mat-raised-button color="primary">Save</button>
+        </div>
+    </div>
+
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Barcode</mat-label>
+                <input [(ngModel)]="articulo.cod_Barras" id="cod_Barras" name="cod_Barras" type="number" matInput
+                    required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Product code</mat-label>
+                <input [(ngModel)]="articulo.cve_Producto" id="cve_Producto" name="cve_Producto" type="number" matInput
+                    required>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Short escription</mat-label>
+                <input [(ngModel)]="articulo.descripcion_Corta" id="descripcion_Corta" name="descripcion_Corta" matInput
+                    required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input [(ngModel)]="articulo.descripcion" id="descripcion" name="descripcion" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Stock min</mat-label>
+                <input [(ngModel)]="articulo.stock_Min" id="stock_Min" name="stock_Min" type="number" matInput required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Stock max</mat-label>
+                <input [(ngModel)]="articulo.stock_Max" id="stock_Max" name="stock_Max" type="number" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Price sold</mat-label>
+                <input [(ngModel)]="articulo.precio_Venta" id="precio_Venta" name="precio_Venta" type="number" matInput
+                    required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Price buy</mat-label>
+                <input [(ngModel)]="articulo.precio_Compra" id="precio_Compra" name="precio_Compra" type="number"
+                    matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Stock</mat-label>
+                <input [(ngModel)]="articulo.stock" id="stock" name="stock" type="number" matInput required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Cantidad um</mat-label>
+                <input [(ngModel)]="articulo.cantidad_Um" id="cantidad_Um" name="cantidad_Um" type="number" matInput
+                    required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Product type</mat-label>
+                <input [(ngModel)]="articulo.tipo_Articulo" id="tipo_Articulo" name="tipo_Articulo" matInput required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>IVA</mat-label>
+                <input [(ngModel)]="articulo.iva" id="iva" name="iva" type="number" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="content-grid form-content">
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Visible</mat-label>
+                <input [(ngModel)]="articulo.visible" id="visible" name="visible" type="number" matInput required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-grid-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Points</mat-label>
+                <input [(ngModel)]="articulo.puntos" id="puntos" name="puntos" type="number" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

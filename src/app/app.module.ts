@@ -9,9 +9,23 @@ import { AddArticuloComponent } from './components/articulo/add-articulo/add-art
 import { ArticuloDetailsComponent } from './components/articulo/articulo-details/articulo-details.component';
 import { ArticuloListComponent } from './components/articulo/articulo-list/articulo-list.component';
 
-// 
+// Angular Material
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+// NgxPagination
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
+import { LineChartComponent } from './components/dashboard/line-chart/line-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +33,23 @@ import { HttpClientModule } from '@angular/common/http';
     AddArticuloComponent,
     ArticuloDetailsComponent,
     ArticuloListComponent,
+    BarChartComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatCardModule,
+    NgxPaginationModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

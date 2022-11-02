@@ -1,0 +1,171 @@
+<!-- add articulo -->
+
+
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="cod_Barras">cod_Barras</label>
+                <!-- <input class="form-control" id="cod_Barras" required [(ngModel)]="articulo.cod_Barras" name="cod_Barras"
+                    value="sfsdfsdfsdf" /> -->
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion_Corta">Description</label>
+                <input class="form-control" />
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="id_Clasificacion">id_Clasificacion</label>
+                <input class="form-control" id="id_Clasificacion" required [(ngModel)]="articulo.id_Clasificacion"
+                    name="id_Clasificacion" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="articulo_Disponible">articulo_Disponible</label>
+                <input class="form-control" id="articulo_Disponible" required [(ngModel)]="articulo.articulo_Disponible"
+                    name="articulo_Disponible" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="last_Update_Inventory">last_Update_Inventory</label>
+                <input class="form-control" id="last_Update_Inventory" required
+                    [(ngModel)]="articulo.last_Update_Inventory" name="last_Update_Inventory" />
+            </div> -->
+
+            <div class="form-group">
+                <label for="stock_Min">stock_Min</label>
+                <input class="form-control" />
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="cod_nterno">cod_nterno</label>
+                <input class="form-control" id="cod_nterno" required [(ngModel)]="articulo.cod_nterno"
+                    name="cod_nterno" />
+            </div> -->
+
+
+            <div class="form-group">
+                <label for="descripcion">descripcion</label>
+                <input class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="precio_Venta">precio_Venta</label>
+                <input class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="stock_Max">stock_Max</label>
+                <input class="form-control" id="stock_Max" required [(ngModel)]="articulo.stock_Max" name="stock_Max" />
+            </div>
+
+            <div class="form-group">
+                <label for="cantidad_Um">cantidad_Um</label>
+                <input class="form-control" id="cantidad_Um" required [(ngModel)]="articulo.cantidad_Um"
+                    name="cantidad_Um" />
+            </div>
+
+            <div class="form-group">
+                <label for="precio_Compra">precio_Compra</label>
+                <input class="form-control" id="precio_Compra" required [(ngModel)]="articulo.precio_Compra"
+                    name="precio_Compra" />
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="utilidad">utilidad</label>
+                <input class="form-control" id="utilidad" required [(ngModel)]="articulo.utilidad" name="utilidad" />
+            </div> -->
+
+
+            <!-- <div class="form-group">
+                <label for="cod_Asociado">cod_Asociado</label>
+                <input class="form-control" id="cod_Asociado" required [(ngModel)]="articulo.cod_Asociado"
+                    name="cod_Asociado" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="id_Unidad">id_Unidad</label>
+                <input class="form-control" id="id_Unidad" required [(ngModel)]="articulo.id_Unidad" name="id_Unidad" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="id_Proveedor">id_Proveedor</label>
+                <input class="form-control" id="id_Proveedor" required [(ngModel)]="articulo.id_Proveedor"
+                    name="id_Proveedor" />
+            </div> -->
+
+            <div class="form-group">
+                <label for="tipo_Articulo">tipo_Articulo</label>
+                <input class="form-control" id="tipo_Articulo" required [(ngModel)]="articulo.tipo_Articulo"
+                    name="tipo_Articulo" />
+            </div>
+
+            <div class="form-group">
+                <label for="stock">stock</label>
+                <input class="form-control" id="stock" required [(ngModel)]="articulo.stock" name="stock" />
+            </div>
+
+            <div class="form-group">
+                <label for="kit">kit</label>
+                <input class="form-control" id="kit" required [(ngModel)]="articulo.kit" name="kit" />
+            </div>
+
+            <div class="form-group">
+                <label for="iva">iva</label>
+                <input class="form-control" id="iva" required [(ngModel)]="articulo.iva" name="iva" />
+            </div>
+
+
+            <!-- <div class="form-group">
+                <label for="activo">activo</label>
+                <input class="form-control" id="activo" required [(ngModel)]="articulo.activo" name="activo" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="kit_Fecha_Ini">kit_Fecha_Ini</label>
+                <input class="form-control" id="kit_Fecha_Ini" required [(ngModel)]="articulo.kit_Fecha_Ini"
+                    name="kit_Fecha_Ini" />
+            </div> -->
+
+
+            <div class="form-group">
+                <label for="visible">visible</label>
+                <input class="form-control" id="visible" required [(ngModel)]="articulo.visible" name="visible" />
+            </div>
+
+
+            <!-- <div class="form-group">
+                <label for="fecha_Registro">fecha_Registro</label>
+                <input class="form-control" id="fecha_Registro" required [(ngModel)]="articulo.fecha_Registro"
+                    name="fecha_Registro" />
+            </div> -->
+
+            <!-- <div class="form-group">
+                <label for="kit_Fecha_Fin">kit_Fecha_Fin</label>
+                <input class="form-control" id="kit_Fecha_Fin" required [(ngModel)]="articulo.kit_Fecha_Fin"
+                    name="kit_Fecha_Fin" />
+            </div> -->
+
+            <div class="form-group">
+                <label for="cve_Producto">cve_Producto</label>
+                <input class="form-control" id="cve_Producto" required [(ngModel)]="articulo.cve_Producto"
+                    name="cve_Producto" />
+            </div>
+
+
+            <div class="form-group">
+                <label for="puntos">puntos</label>
+                <input class="form-control" id="puntos" required [(ngModel)]="articulo.puntos" name="puntos" />
+            </div>
+        </div>
+
+        <button (click)="saveArticulo()" class="btn btn-success">Submit</button>
+
+        <div *ngIf="submitted">
+            <h4>Tutorial was submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newArticulo()">Add</button>
+        </div>
+    </div>
+</div>
+<!-- add articulo -->
