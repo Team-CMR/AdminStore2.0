@@ -13,11 +13,10 @@ export class BarChartComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.createChart();
+    // this.createChart();
   }
 
   createChart() {
-
     this.chart = new Chart("MyChart", {
       type: 'bar', //this denotes tha type of chart
 

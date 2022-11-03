@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/dashboard/line-chart/line-chart.component';
+import { BestSellerComponent } from './components/dashboard/best-seller/best-seller.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LineChartComponent } from './components/dashboard/line-chart/line-chart
     ArticuloListComponent,
     BarChartComponent,
     LineChartComponent,
+    BestSellerComponent,
   ],
   imports: [
     BrowserModule,
