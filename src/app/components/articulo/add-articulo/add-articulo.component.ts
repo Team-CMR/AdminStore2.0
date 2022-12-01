@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Articulo } from 'src/app/models/articulo/articulo.model';
 import { ArticuloService } from 'src/app/services/articulo/articulo.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-articulo',
   templateUrl: './add-articulo.component.html',
-  styleUrls: ['./add-articulo.component.scss']
+  styleUrls: ['./add-articulo.component.scss'],
 })
 
 export class AddArticuloComponent implements OnInit {
@@ -70,17 +71,18 @@ export class AddArticuloComponent implements OnInit {
   //   puntos: ''
   // };
   submitted = false;
-  addStyle: string;
+  // addStyle: string;
   message = '';
 
-  constructor(private ArticuloService: ArticuloService, public sanitizer: DomSanitizer) {
-    this.addStyle = '/assets/addStyle.css';
+  constructor(private ArticuloService: ArticuloService, private httpClient: HttpClient) {
+    // this.addStyle = '/assets/addStyle.css';
   }
 
   ngOnInit(): void {
   }
 
-  saveArticulo(): void {
+  saveArticulo(event: any): void {
+
     const data = {
       cod_Barras: this.articulo.cod_Barras,
       descripcion_Corta: this.articulo.descripcion_Corta,
@@ -168,6 +170,8 @@ export class AddArticuloComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+
+      event.preventDefault();
   }
 
   newArticulo(): void {

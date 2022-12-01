@@ -48,29 +48,15 @@ export class ArticuloListComponent implements OnInit {
     this.articuloService.getAll(params)
       .subscribe({
         next: (response) => {
-          // const { articulos, totalItems } = response;
           this.articulos = response;
           this.count = response.length;
           this.message = '';
-          // console.log(this.count);
-          // console.log(response);
         },
         error: (error) => {
           console.log(error);
-
         },
         complete: () => console.info('complete')
       });
-    // .subscribe(
-    //   response => {
-    //     const { tutorials, totalItems } = response;
-    //     this.articulos = tutorials;
-    //     this.count = totalItems;
-    //     console.log(response);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   });
   }
 
   // retrieveArticulos(): void {

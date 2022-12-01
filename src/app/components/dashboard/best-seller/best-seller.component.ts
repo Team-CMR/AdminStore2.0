@@ -27,6 +27,9 @@ export class BestSellerComponent implements OnInit {
         next: (response) => {
           this.articulos = response;
           this.articulos.forEach(bestSeller => {
+            console.log(bestSeller)
+            console.log('--------')
+
             this.barcodes.push(String(bestSeller.barcode))
             this.vendidos.push(String(bestSeller.vendidos))
             // vendidos

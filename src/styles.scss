@@ -8,6 +8,127 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    // background-color: black !important;
 }
+
 // Custom
+/* Columns */
+.col-grid-1 {
+    width: 10%;
+}
+
+.col-grid-2 {
+    width: 20%;
+}
+
+.col-grid-3 {
+    width: 30%;
+}
+
+.col-grid-4 {
+    width: 40%;
+}
+
+.col-grid-5 {
+    width: 50%;
+}
+
+.col-grid-6 {
+    width: 60%;
+}
+
+.col-grid-7 {
+    width: 70%;
+}
+
+.col-grid-8 {
+    width: 80%;
+}
+
+.col-grid-9 {
+    width: 90%;
+}
+
+.col-grid-10 {
+    width: 100%;
+}
+
+/* Columns */
+
+
+/* Content */
+.container-grid {
+    display: flex;
+}
+
+.content-grid {
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+
+.content-left {
+    justify-content: left;
+}
+
+/* Content */
+
+// MENU
+.example-menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-width: 280px;
+    background-color: rgb(255, 255, 255);
+    padding: 6px 0;
+}
+
+.example-menu-item {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    user-select: none;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+}
+
+.example-menu-item:hover {
+    background-color: rgb(208, 208, 208);
+}
+
+.example-menu-item:active {
+    background-color: rgb(170, 170, 170);
+}
+
+// MENU
+
+
+app-add-articulo.ng-star-inserted {
+    width: 100% !important;
+}
+
+.edit-form.ng-star-inserted {
+    width: 100% !important;
+}
+
+app-articulo-details.ng-star-inserted {
+    width: 100% !important;
+}
+
+.mat-form-field {
+    width: 100% !important;
+}
+
 // Custom

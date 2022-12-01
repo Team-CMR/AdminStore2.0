@@ -1,4 +1,4 @@
-<link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(addStyle)">
+<!-- <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(addStyle)"> -->
 
 <div>
     <div class="content-grid form-content content-center">
@@ -6,7 +6,7 @@
             <h3>Add articulo</h3>
         </div>
     </div>
-    
+
     <div class="content-grid form-content content-center">
         <div class="content-titulo">
             <p>{{ message }}</p>
@@ -15,7 +15,7 @@
 
     <div class="content-grid form-content content-left">
         <div class="col-grid-4">
-            <button (click)="saveArticulo()" mat-raised-button color="primary">Save</button>
+            <button (click)="saveArticulo($event)" mat-raised-button color="primary">Save</button>
         </div>
     </div>
 

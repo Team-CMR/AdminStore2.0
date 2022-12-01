@@ -10,11 +10,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
 
   title = 'AdminStore';
-  menu: string;
-  customGrid: string;
+  // menu: string;
+  // customGrid: string;
   constructor(public sanitizer: DomSanitizer) {
-    this.menu = '/assets/menu.css';
-    this.customGrid = '/assets/custom-grid.css';
+    // this.menu = '/assets/menu.css';
+    // this.customGrid = '/assets/custom-grid.css';
   }
   
 }
