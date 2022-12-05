@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/dashboard/line-chart/line-chart.component';
 import { BestSellerComponent } from './components/dashboard/best-seller/best-seller.component';
+import { LoginComponent } from './components/login/login.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { BestSellerComponent } from './components/dashboard/best-seller/best-sel
     BarChartComponent,
     LineChartComponent,
     BestSellerComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,12 @@ import { BestSellerComponent } from './components/dashboard/best-seller/best-sel
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

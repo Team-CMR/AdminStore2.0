@@ -7,13 +7,15 @@ import { ArticuloDetailsComponent } from './components/articulo/articulo-details
 import { AddArticuloComponent } from './components/articulo/add-articulo/add-articulo.component';
 import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
 import { BestSellerComponent } from './components/dashboard/best-seller/best-seller.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'articulos', pathMatch: 'full' },
   { path: 'articulos', component: ArticuloListComponent },
   { path: 'articulos/:cod_barras', component: ArticuloDetailsComponent },
   { path: 'add', component: AddArticuloComponent },
-  { path: 'best-seller', component: BestSellerComponent }
+  { path: 'best-seller', component: BestSellerComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,18 @@
+<p>Login</p>
+
+<form class="example-form"(submit)="onSubmit($event)">
+    <mat-form-field class="example-full-width">
+        <mat-label>Usuario</mat-label>
+        <input matInput placeholder="Usuario" id="inpUserNameLogin" (keyup)="onKey($event)" value="">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" id="inpUserPassLogin" (keyup)="onKey($event)" value="">
+    </mat-form-field>
+
+    <div>
+        <button mat-raised-button class="btn-principal" type="submit">Ingresar</button>
+    </div>
+
+</form>
