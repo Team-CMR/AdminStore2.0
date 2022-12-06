@@ -19,9 +19,34 @@ export class ArticuloListComponent implements OnInit {
   pageSizes = [5, 10, 20];
 
   constructor(private articuloService: ArticuloService) { }
-
   ngOnInit(): void {
-    this.retrieveArticulos();
+    navigator.serviceWorker.register('/service-worker.js');
+
+    var axios = require('axios');
+    var data = JSON.stringify({
+      "user": "RodrigoP",
+      "password": "RodrigoP9982736"
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:8004/api/auth/generate-token',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: data
+    };
+
+    axios(config)
+      .then((response: any) => {
+        console.log(response.data);
+        localStorage.setItem('Token', response.data.token);
+        this.retrieveArticulos();
+
+      })
+      .catch(function (error: any) {
+        console.log(error);
+      });
   }
 
   getRequestParams(page: number, pageSize: number): any {
@@ -52,14 +77,15 @@ export class ArticuloListComponent implements OnInit {
       url: 'https://localhost:8004/api/articulos',
       crossorigin: true,
       headers: {
-        'Access-Control-Request-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJBUFAgUFdBIEFOR1VMQVIgLyBTUFJJTkcgQk9PVCIsImp0aSI6IjEiLCJzdWIiOiJ3d3cudmFsaWRhbmRvLXRva2VuLXB3YS5jb20iLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJuYW1lIjoiQWRtQ2xhdWRpYSIsImVtYWlsIjoiYWRtaW4uY2xhdWRpYUBtYWlsLmNvbSIsInJvbCI6IkFETUlOIiwiaWF0IjoxNjcwMDIzMjc4LCJleHAiOjE2NzAwMjM4Nzh9.K4VPALkyrLMKWCiQ8G4VNQZY0OXZ0JERzBFDJjiPW0qQ0VQgnjtvBog-0oHwRdElQn_MjyZFghG3kyxNPJKpWmkCppx4XRKST6r3LrIscjlNpLB4m4c87FdNvlgubBJ8ub6AMSaHYOXrBvOaDtXycKAwB2aTgjKjPNCs7fC7NuxQWVFwYpbhsr8KRHreXtHHJEpvQEELQI28X94YDPKYwKyBaOAwCC8oWJZLb0loCoOI0MTqIpVgvTauYCDy72yByz-XLa3d5Sn-nAVqdDk7vJ2OHgMLeYQkqb57tKMNmVXOKuDNNvJBKAZ0757pSJ901TfRF9Bynz3YJ1gMFoe9ULx3v7GobYY7kaSVi5eaWp4YmgxfU8CRMoHdWakJjWPz_VcIqrPU22wxBR-MpUUodLgucZh9AS9sUiWyBDpV4decgG61GthjEsBH1NC6xaWwy4_hCWpAIk6f1msqJNVuc_znFsenD7pZWDvjHSPRYjecfhyA7FKeVUPn87Ik7mZWtEeewW8cETsvcaE0oTooHdzLYx-ZQe072VR7_LhpM9e5v59S09Xsn0Plb1OPrGFuf8H_x-TASSQbeQh5CUpP9rgwa2uSgZaSwq4sLvnmUUKSJKFfQmwhOFxd1pVPGxD75YqH1psPpl0bxMjEvS7tPuFkwV1xQ9ybTKAYrcjl09E',
+        'Authorization': 'Bearer ' + localStorage.getItem("Token"),
       }
     };
 
     axios(config)
-      .then(function (response: any) {
-        console.log(response.data);
+      .then((response: any) => {
+        this.articulos = response.data;
+        this.count = response.length;
+        this.message = '';
       })
       .catch(function (error: any) {
         console.log(error);
